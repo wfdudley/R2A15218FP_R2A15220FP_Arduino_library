@@ -5,7 +5,7 @@ and volume control.
 
 The parts have six (6) 21 bit registers, and use a funny serial scheme,
 so not SPI or I2C.  Data bits must be valid on the rising clock; data
-line must be low at fall of clock EXCEPT FOR the 24th bit, in which
+line must be low at fall of clock <b>except for</b> the 24th bit, in which
 case data line must be high at falling clock, which latches the 24 bits
 into the appropriate register.  Register address is the last three bits
 of the 24 bit stream.  There is no chip select pin, so this must be a
@@ -25,7 +25,7 @@ The other "new" feature is an enable to get Record Out working.
 
 NOTE: You should mute the audio output (outside and independent of
 the R2A15218FP chip) for about 400msec when switching inputs lest you
-get a speaker or ear damaging POP.  Or so says the guy (george93) on
+get a speaker or ear damaging POP.  Or so says the guy (geo98) on
 the internet who gave other valuable insight about these parts in a forum.
 
 Tested with ESP32, but should work with other processors.
